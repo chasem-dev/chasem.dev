@@ -70,3 +70,36 @@ h5{
   color: gray;
 }
 
+.wrapper{
+  position:relative;
+  cursor: pointer;
+}
+
+.wrapper:hover{
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(168, 142, 86);
+}
+
+.wrapper .text {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  visibility: hidden;
+  font-size: 24px;
+  color: black;
+}
+.wrapper:hover .text {
+  visibility: visible;
+  border: 5px;
+}
+.wrapper:hover img{
+  visibility: hidden;
+}
+
+.social {
+  cursor: 'pointer';
+  margin: 0px;
+  max-width:'24px';
+  display: 'inline-block' !important;
+}

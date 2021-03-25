@@ -18,25 +18,30 @@ export default function Home() {
 
     
       <main className={styles.main}>
-        <div className="columns">
-          <div style={{marginRight: '1em'}}>
-          <Link href="https://github.com/Xwaffle1/">
-            <img style={{cursor: "pointer"}} onMouseOver={(_=>{
-              setGithubImage("/social/github-hover.png")
-            })} 
-            onMouseOut={(_=>{
-              setGithubImage("/social/github.png")
-            })} id="social-gh" className="image is-24x24" src={githubImage} />
-          </Link>
-          </div>
-          <Link  href="https://www.linkedin.com/in/chase-myers-56a394152/">
-            <img style={{cursor: "pointer"}} onMouseOver={(_=>{
-              setLinkedInImage("/social/li-hover.png")
-            })} 
-            onMouseOut={(_=>{
-              setLinkedInImage("/social/li.png")
-            })} id="social-li" className="image is-24x24" src={linkedInImage} />
-          </Link>
+        <div className="">
+            <span>
+
+            <Link href="https://github.com/Xwaffle1/">
+              <img style={{cursor: "pointer", marginRight: '1em', maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
+                setGithubImage("/social/github-hover.png")
+              })} 
+              onMouseOut={(_=>{
+                setGithubImage("/social/github.png")
+              })} id="social-gh" className="image is-24x24" src={githubImage} />
+            </Link>
+            </span>
+            <span>
+
+            <Link  href="https://www.linkedin.com/in/chase-myers-56a394152/">
+              <img style={{cursor: "pointer", margin: 0, maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
+                setLinkedInImage("/social/li-hover.png")
+              })} 
+              onMouseOut={(_=>{
+                setLinkedInImage("/social/li.png")
+              })} id="social-li" className="image is-24x24" src={linkedInImage} />
+            </Link>
+            </span>
+
         </div>
 
         <figure className="image content-is-vcentered" style={{justifyContent: 'center'}}>
@@ -143,7 +148,34 @@ export default function Home() {
         </div>
 
         <h2 className={styles.sectionheader}>Projects</h2>
-        <p>Examining the tips and tricks used to make Stripe's website design a notch above the rest.</p>
+        <div className="columns is-variable is-1-mobile is-0-tablet is-3-desktop">
+            <div className="column">
+              <h3>Chasebin</h3>
+              <div className="wrapper">
+                <img className="hover" src="/project/chasebin.png" border="5px" style={{borderColor: "#cf934e", width: "481px", height: "302px"} } />
+                <Link href="https://chasebin.vercel.app/">
+                  <p className="text">
+                    Chasebin is a simple project to help boost my familiarity with NextJS and React. It is a code formatter that can generate links that are parseable client side only. 
+                    The code snippet gets converted to Bytes using LZMA and then converts each byte to BASE64 and
+                    appends this to the URL, along with the selected language formatting selected.
+                  </p>
+                </Link>
+              </div>
+            </div>
+            <div className="column">
+              <h3>Godot Kart</h3>
+              <div className="wrapper">
+                <img className="hover" src="/project/godot.png" border="5px" style={{borderColor: "#cf934e", width: "481px", height: "302px"} } />
+                <Link href="https://www.godotkart.com/">
+                  <p className="text">
+                    Godot Kart is a Mario Kart inspired multiplayer Kart racing game. I built the network behind the game which includes all client interpolation,
+                    a master game server browser, and the game servers.
+                  </p>
+                </Link>
+              </div>
+            </div>
+        </div>
+
       </main>
 
       <footer className={styles.footer}>
