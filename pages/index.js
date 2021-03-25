@@ -39,8 +39,8 @@ export default function Home() {
           </Link>
         </div>
 
-        <figure class="image content-is-vcentered" style={{justifyContent: 'center'}}>
-          <img  border="5px" style={{borderColor: "#a44a3f", width: "256px", height: "256px"}} class="is-rounded" src="/social/me.jpg" />
+        <figure className="image content-is-vcentered" style={{justifyContent: 'center'}}>
+          <img  border="5px" style={{borderColor: "#cf934e", width: "256px", height: "256px"}} className="is-rounded" src="/social/me.jpg" />
         </figure>
 
 
