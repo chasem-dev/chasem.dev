@@ -55,15 +55,17 @@ export default function Home() {
         <div>
           <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
             <div className="column job-company">
-              <div className="icon-text content-is-vcentered">
-                <span className="icon has-text-success">
-                  <i className="fas fa-cog fa-spin"></i>
+              <h3>
+                <span className="icon-text content-is-vcentered">
+                  <span className="icon has-text-success">
+                    <i className="fas fa-cog fa-spin"></i>                  
+                  </span>                
+                  Level Data Inc.
                 </span>
-                <span><h3>Level Data Inc.</h3></span>
-              </div>
+              </h3>
             </div>
             <div className="column">
-              <h5 className="job-date">December 2018 {"-"}</h5>
+              <h5 className="job-date">Dec 2018 {"-"}</h5>
             </div>          
           </div>
           <h4 className="job-title">Software Engineer II</h4>
@@ -80,15 +82,17 @@ export default function Home() {
         <div style={{marginTop: '3em'}}>
           <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
             <div className="column job-company">
-              <div className="icon-text content-is-vcentered">
-                <span className="icon has-text-info">
-                  <i className="fas fa-check-circle"></i>
+              <h3>
+                <span className="icon-text content-is-vcentered">
+                  <span className="icon has-text-info">
+                    <i className="fas fa-check-circle"></i>                  
+                  </span>                
+                  JourneyGaming
                 </span>
-                <span><h3>Journey Gaming</h3></span>
-              </div>
+              </h3>
             </div>
             <div className="column">
-              <h5 className="job-date">February 2016 {"-"} December 2018</h5>
+              <h5 className="job-date">Feb 2016 {"-"} Dec 2018</h5>
             </div>          
           </div>
           <h4 className="job-title">Software Developer</h4>
@@ -104,15 +108,17 @@ export default function Home() {
         <div style={{marginTop: '3em'}}>
           <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
             <div className="column job-company">
-              <div className="icon-text content-is-vcentered">
-                <span className="icon has-text-info">
-                  <i className="fas fa-check-circle"></i>
+              <h3>
+                <span className="icon-text content-is-vcentered">
+                  <span className="icon has-text-info">
+                    <i className="fas fa-check-circle"></i>                  
+                  </span>                
+                  CounterCraft
                 </span>
-                <span><h3>Counter Craft</h3></span>
-              </div>
+              </h3>
             </div>
             <div className="column">
-              <h5 className="job-date">December 2017 {"-"} March 2018</h5>
+              <h5 className="job-date">Dec 2017 {"-"} Mar 2018</h5>
             </div>          
           </div>
           <h4 className="job-title">Software Engineer</h4>
@@ -127,15 +133,17 @@ export default function Home() {
         <div style={{marginTop: '3em'}}>
           <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
             <div className="column job-company">
-              <div className="icon-text content-is-vcentered">
-                <span className="icon has-text-info">
-                  <i className="fas fa-check-circle"></i>
+              <h3>
+                <span className="icon-text content-is-vcentered">
+                  <span className="icon has-text-info">
+                    <i className="fas fa-check-circle"  ></i>                  
+                  </span>                
+                  DungeonRealms
                 </span>
-                <span><h3>Dungeon Realms</h3></span>
-              </div>
+              </h3>
             </div>
             <div className="column">
-              <h5 className="job-date">September 2015 {"-"} February 2016</h5>
+              <h5 className="job-date">Sep 2015 {"-"} Feb 2016</h5>
             </div>          
           </div>
           <h4 className="job-title">Software Developer</h4>

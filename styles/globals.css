@@ -27,7 +27,7 @@ a {
 }
 
 h3{
-  font-size: 24px;
+  font-size: 21px;
 }
 
 h4{
@@ -39,12 +39,13 @@ h5{
 }
 
 .jobentry{
-  margin-left: 1em ;
+  /* margin-left: 1em ; */
+  padding-left: 0;
 }
 
 .job-company {
-  padding: 0em !important;
-  margin-left: 1em;
+  /* padding: 0em !important; */
+  /* margin-left: 1em; */
   margin-bottom: 0px;
   font-style: italic;
   color: rgb(48, 46, 68);
@@ -52,18 +53,18 @@ h5{
 }
 .job-title {
   padding: 0em !important;
-  margin-left: 3.75em ;
+  /* margin-left: 2em ; */
   margin-top: 0;
-  padding: 0;
+  /* padding: 0; */
   color: rgb(168, 142, 86);
   font-weight: bold;
 
 }
 
 .job-points{
-  margin-left: 3em ;
+  /* margin-left: 1em ; */
   margin-top: 1em;
-  max-width: 800px;
+  /* max-width: 800px; */
 }
 
 .job-date {
