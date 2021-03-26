@@ -20,7 +20,6 @@ export default function Home() {
       <main className={styles.main}>
         <div className="">
             <span>
-
             <Link href="https://github.com/Xwaffle1/">
               <img style={{cursor: "pointer", marginRight: '1em', maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
                 setGithubImage("/social/github-hover.png")
@@ -41,17 +40,29 @@ export default function Home() {
               })} id="social-li" className="image is-24x24" src={linkedInImage} />
             </Link>
             </span>
-
         </div>
 
-        <figure className="image content-is-vcentered" style={{justifyContent: 'center'}}>
-          <img  border="5px" style={{borderColor: "#cf934e", width: "256px", height: "256px"}} className="is-rounded" src="/social/me.jpg" />
-        </figure>
+        <div className="columns">
+          <div className="column">            
+          </div>
+          <div className="column">
+            <figure className="image content-is-vcentered" style={{justifyContent: 'center'}}>
+              <img  border="5px" style={{borderColor: "#cf934e", width: "256px", height: "256px"}} className="is-rounded" src="/social/me.jpg" />
+            </figure>
+          </div>
+          <div className="column navbar">
+            <div className="columns">
+              <a href="#experience" className="column is-4 nav">Work Experience</a> 
+              <a href="#projects" className="column is-4 nav">Projects</a>
+              <a href="#resume" className="column is-4 nav">Resume</a>
+            </div>            
+          </div>        
+        </div>
 
 
 
         <h1 className={styles.title}> Hi! I'm Chase </h1>
-        <h2 className={styles.sectionheader}>Work Experience</h2>
+        <h2 id="experience" className={styles.sectionheader}>Work Experience</h2>
         <div>
           <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
             <div className="column job-company">
@@ -65,7 +76,7 @@ export default function Home() {
               </h3>
             </div>
             <div className="column">
-              <h5 className="job-date">Dec 2018 {"-"}</h5>
+              <h5 className="job-date">Dec 2018 {"->"}</h5>
             </div>          
           </div>
           <h4 className="job-title">Software Engineer II</h4>
@@ -155,12 +166,17 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className={styles.sectionheader}>Projects</h2>
-        <div className="columns is-variable is-1-mobile is-0-tablet is-3-desktop">
+        <hr />
+        <h2 id="projects" className={styles.sectionheader}>Projects</h2>
+        <div className="columns is-variable is-0-tablet is-3-desktop">
             <div className="column">
-              <h3>Chasebin</h3>
+              <Link href="https://www.godotkart.com/">
+                <a>
+                  <h3>Chasebin<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-external-link-alt"></i></span></h3>              
+                </a>
+              </Link>
               <div className="wrapper">
-                <img className="hover" src="/project/chasebin.png" border="5px" style={{borderColor: "#cf934e", width: "481px", height: "302px"} } />
+                <img className="hover" src="/project/chasebin.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
                 <Link href="https://chasebin.vercel.app/">
                   <p className="text">
                     Chasebin is a simple project to help boost my familiarity with NextJS and React. It is a code formatter that can generate links that are parseable client side only. 
@@ -170,20 +186,23 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="column">
-              <h3>Godot Kart</h3>
+            <div className="column is-vcentered">
+              <Link href="https://www.godotkart.com/">
+                <a>
+                  <h3>Godot Kart<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-external-link-alt"></i></span></h3>              
+                </a>
+              </Link>
               <div className="wrapper">
-                <img className="hover" src="/project/godot.png" border="5px" style={{borderColor: "#cf934e", width: "481px", height: "302px"} } />
+                <img className="hover" src="/project/godot.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
                 <Link href="https://www.godotkart.com/">
-                  <p className="text">
-                    Godot Kart is a Mario Kart inspired multiplayer Kart racing game. I built the network behind the game which includes all client interpolation,
+                  <p className="text" style={{verticalAlign: 'middle'}}>
+                    Godot Kart is a Mario Kart inspired multiplayer Kart racing game built using the Godot Engine. After discovering someone made a single player demo of the game, I took lead on building the multiplayer behind the game which includes all client interpolation,
                     a master game server browser, and the game servers.
                   </p>
                 </Link>
               </div>
             </div>
         </div>
-
       </main>
 
       <footer className={styles.footer}>
