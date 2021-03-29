@@ -13,7 +13,8 @@ export default function Home() {
       <Head>
         <title>Chase Myers</title>
         <link rel="icon" href="/favicon.ico" />
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        {/* <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> */}
+        {/* <script defer src="@fortawsome\fontawesome-free/js/all.js" /> */}
       </Head>
 
     
@@ -51,10 +52,19 @@ export default function Home() {
             </figure>
           </div>
           <div className="column navbar">
-            <div className="columns">
+            <div className="columns is-vcentered">
               <a href="#experience" className="column is-4 nav">Work Experience</a> 
               <a href="#projects" className="column is-4 nav">Projects</a>
-              <a href="#resume" className="column is-4 nav">Resume</a>
+              <a href="Chase - Resume.pdf" className="column is-4 nav" style={{minWidth: '160px'}} download>
+                <span className="icon-text content-is-vcentered" style={{justifyContent: 'center'}}>
+                  Download Resume
+                  <span className="icon has-text-success">
+                    <i className="fas fa-file-export fa-sm"></i>                  
+                  </span>                  
+                </span> 
+              </a>
+
+              {/* <a href="#resume" className="column is-4 nav icon-text">Download Resume <span><i class="fas fa-file-export fa-sm"></i></span></a> */}
             </div>            
           </div>        
         </div>
@@ -64,22 +74,25 @@ export default function Home() {
         <h1 className={styles.title}> Hi! I'm Chase </h1>
         <h2 id="experience" className={styles.sectionheader}>Work Experience</h2>
         <div>
-          <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
+        <div style={{marginTop: '0px'}}></div>
+          <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
+            <div className="column is-1" style={{maxWidth: '30px', width: '30px'}}>
+              <span className="icon-text content-is-vcentered">
+                <span className="icon has-text-success">
+                 <i className="fas fa-cog fa-spin"></i>                  
+                </span>                  
+              </span>  
+            </div>
             <div className="column job-company">
-              <h3>
-                <span className="icon-text content-is-vcentered">
-                  <span className="icon has-text-success">
-                    <i className="fas fa-cog fa-spin"></i>                  
-                  </span>                
-                  Level Data Inc.
-                </span>
+              <h3>            
+                Level Data Inc.
               </h3>
             </div>
             <div className="column">
               <h5 className="job-date">Dec 2018 {"->"}</h5>
             </div>          
           </div>
-          <h4 className="job-title">Software Engineer II</h4>
+          <h4 className="job-title">Software Developer</h4>
           <div className = "content job-points">
             <ul>
               <li>Maintained library with thousands of scheduled jobs depending on it.</li>
@@ -90,16 +103,19 @@ export default function Home() {
           </div>
         </div>
 
+
         <div style={{marginTop: '3em'}}>
-          <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
+          <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
+            <div className="column is-1" style={{maxWidth: '30px', width: '30px'}}>
+            <span className="icon-text content-is-vcentered">
+                <span className="icon has-text-info">
+                  <i className="fas fa-check-circle"  ></i>
+                </span>                  
+              </span>  
+            </div>
             <div className="column job-company">
-              <h3>
-                <span className="icon-text content-is-vcentered">
-                  <span className="icon has-text-info">
-                    <i className="fas fa-check-circle"></i>                  
-                  </span>                
-                  JourneyGaming
-                </span>
+              <h3>            
+                JourneyGaming
               </h3>
             </div>
             <div className="column">
@@ -117,40 +133,47 @@ export default function Home() {
         </div>
 
         <div style={{marginTop: '3em'}}>
-          <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
+          <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
+            <div className="column is-1" style={{maxWidth: '30px', width: '30px'}}>
+            <span className="icon-text content-is-vcentered">
+                <span className="icon has-text-info">
+                  <i className="fas fa-check-circle"  ></i>
+                </span>                  
+              </span>  
+            </div>
             <div className="column job-company">
-              <h3>
-                <span className="icon-text content-is-vcentered">
-                  <span className="icon has-text-info">
-                    <i className="fas fa-check-circle"></i>                  
-                  </span>                
-                  CounterCraft
-                </span>
+              <h3>            
+                CounterCraft
               </h3>
             </div>
             <div className="column">
               <h5 className="job-date">Dec 2017 {"-"} Mar 2018</h5>
             </div>          
           </div>
-          <h4 className="job-title">Software Engineer</h4>
+          <h4 className="job-title">Software Developer</h4>
           <div className = "content job-points">
             <ul>
-              <li>Facilitated a large amount of Cloud, Server and Client interaction using Netty</li>
+            <li>Facilitated a large amount of Cloud, Server and Client interaction using Netty</li>
               <li>Acquired a larger grasp of OpenGL using the Java library</li>
             </ul>
           </div>
         </div>
 
+
+
+
         <div style={{marginTop: '3em'}}>
-          <div className="columns content-is-vcentered jobentry" style={{marginBottom: 0}}>
+          <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
+            <div className="column is-1" style={{maxWidth: '30px', width: '30px'}}>
+            <span className="icon-text content-is-vcentered">
+                <span className="icon has-text-info">
+                  <i className="fas fa-check-circle"  ></i>
+                </span>                  
+              </span>  
+            </div>
             <div className="column job-company">
-              <h3>
-                <span className="icon-text content-is-vcentered">
-                  <span className="icon has-text-info">
-                    <i className="fas fa-check-circle"  ></i>                  
-                  </span>                
+              <h3>            
                   DungeonRealms
-                </span>
               </h3>
             </div>
             <div className="column">
@@ -172,7 +195,7 @@ export default function Home() {
             <div className="column">
               <Link href="https://www.godotkart.com/">
                 <a>
-                  <h3>Chasebin<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-external-link-alt"></i></span></h3>              
+                  <h3>Chasebin<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
                 </a>
               </Link>
               <div className="wrapper">
@@ -189,13 +212,13 @@ export default function Home() {
             <div className="column is-vcentered">
               <Link href="https://www.godotkart.com/">
                 <a>
-                  <h3>Godot Kart<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-external-link-alt"></i></span></h3>              
+                  <h3>Godot Kart<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
                 </a>
               </Link>
-              <div className="wrapper">
+              <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
                 <img className="hover" src="/project/godot.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                <Link href="https://www.godotkart.com/">
-                  <p className="text" style={{verticalAlign: 'middle'}}>
+                <Link href="https://www.godotkart.com/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
+                  <p className="text">
                     Godot Kart is a Mario Kart inspired multiplayer Kart racing game built using the Godot Engine. After discovering someone made a single player demo of the game, I took lead on building the multiplayer behind the game which includes all client interpolation,
                     a master game server browser, and the game servers.
                   </p>
