@@ -226,6 +226,25 @@ export default function Home() {
               </div>
             </div>
         </div>
+
+        <div className="columns is-variable is-0-tablet is-3-desktop">
+          <div className="column is-vcentered">
+              <Link href="https://hashmap.me/">
+                <a>
+                  <h3>Hashmap.me<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
+                </a>
+              </Link>
+              <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
+                <img className="hover" src="/project/hashmapme.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
+                <Link href="https://hashmap.me/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
+                  <p className="text">
+                    Hashmap.me was my implementation of simplifying the ability to persist data between restarts for an application. Anytime a developer wants to begin a project they will begin by storing data into their applications memory. 
+                    This aims to allow developers to simply upload thier cache through HTTP and then on startup pull that cache back down.
+                  </p>
+                </Link>
+              </div>
+          </div>
+        </div>
       </main>
 
       <footer className={styles.footer}>
