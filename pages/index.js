@@ -235,7 +235,7 @@ export default function Home() {
                 </a>
               </Link>
               <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                <img className="hover" src="/project/hashmapme.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
+                <img className="hover" src="/project/hashmap.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
                 <Link href="https://hashmap.me/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
                   <p className="text">
                     Hashmap.me was my implementation of simplifying the ability to persist data between restarts for an application. Anytime a developer wants to begin a project they will begin by storing data into their applications memory. 
