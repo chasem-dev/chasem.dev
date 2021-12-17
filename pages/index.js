@@ -192,23 +192,23 @@ export default function Home() {
         <hr />
         <h2 id="projects" className={styles.sectionheader}>Projects</h2>
         <div className="columns is-variable is-0-tablet is-3-desktop">
-            <div className="column">
-              <Link href="https://www.godotkart.com/">
-                <a>
-                  <h3>Chasebin<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
-                </a>
-              </Link>
-              <div className="wrapper">
-                <img className="hover" src="/project/chasebin.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                <Link href="https://chasebin.vercel.app/">
-                  <p className="text">
-                    Chasebin is a simple project to help boost my familiarity with NextJS and React. It is a code formatter that can generate links that are parseable client side only. 
-                    The code snippet gets converted to Bytes using LZMA and then converts each byte to BASE64 and
-                    appends this to the URL, along with the selected language formatting selected.
-                  </p>
+
+          <div className="column is-vcentered">
+                <Link href="https://inventories.chasem.dev/">
+                  <a>
+                    <h3>Inventories.gg<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
+                  </a>
                 </Link>
-              </div>
-            </div>
+                <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
+                  <img className="hover" src="/project/inventories.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
+                  <Link href="https://inventories.chasem.dev/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
+                    <p className="text">
+                      Inventories.gg has been the most complete and feature full project I've worked on since gaining as much experience in React. It is a Minecraft inventory viewer for any server who wants to display their players inventories for others to see.
+                      Technlogies include Material-UI, MongoDB, React and NextJS. Authentication is using OAuth handled by Clerk.dev
+                    </p>
+                  </Link>
+                </div>
+            </div>          
             <div className="column is-vcentered">
               <Link href="https://www.godotkart.com/">
                 <a>
@@ -226,7 +226,6 @@ export default function Home() {
               </div>
             </div>
         </div>
-
         <div className="columns is-variable is-0-tablet is-3-desktop">
           <div className="column is-vcentered">
               <Link href="https://hashmap.me/">
@@ -244,6 +243,23 @@ export default function Home() {
                 </Link>
               </div>
           </div>
+          <div className="column">
+              <Link href="https://chasebin.vercel.app/">
+                <a>
+                  <h3>Chasebin<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
+                </a>
+              </Link>
+              <div className="wrapper">
+                <img className="hover" src="/project/chasebin.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
+                <Link href="https://chasebin.vercel.app/">
+                  <p className="text">
+                    Chasebin is a simple project to help boost my familiarity with NextJS and React. It is a code formatter that can generate links that are parseable client side only. 
+                    The code snippet gets converted to Bytes using LZMA and then converts each byte to BASE64 and
+                    appends this to the URL, along with the selected language formatting selected.
+                  </p>
+                </Link>
+              </div>
+            </div>
         </div>
       </main>
 
