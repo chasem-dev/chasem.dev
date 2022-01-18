@@ -7,6 +7,7 @@ export default function Home() {
 
   const [githubImage, setGithubImage] = React.useState("/social/github.png")
   const [linkedInImage, setLinkedInImage] = React.useState("/social/li.png")
+  const [mailImage, setMailImage] = React.useState("/social/email.png")
 
   return (
     <div className={styles.container}>
@@ -21,26 +22,35 @@ export default function Home() {
       <main className={styles.main}>
         <div className="">
             <span>
-            <Link href="https://github.com/Xwaffle1/">
-              <img style={{cursor: "pointer", marginRight: '1em', maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
-                setGithubImage("/social/github-hover.png")
-              })} 
-              onMouseOut={(_=>{
-                setGithubImage("/social/github.png")
-              })} id="social-gh" className="image is-24x24" src={githubImage} />
-            </Link>
+				<Link href="https://github.com/Xwaffle1/">
+				  <img style={{cursor: "pointer", marginRight: '1em', maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
+					setGithubImage("/social/github-hover.png")
+				  })} 
+				  onMouseOut={(_=>{
+					setGithubImage("/social/github.png")
+				  })} id="social-gh" className="image is-24x24" src={githubImage} />
+				</Link>
             </span>
             <span>
-
-            <Link  href="https://www.linkedin.com/in/chase-myers-56a394152/">
-              <img style={{cursor: "pointer", margin: 0, maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
-                setLinkedInImage("/social/li-hover.png")
-              })} 
-              onMouseOut={(_=>{
-                setLinkedInImage("/social/li.png")
-              })} id="social-li" className="image is-24x24" src={linkedInImage} />
-            </Link>
-            </span>
+				<Link  href="https://www.linkedin.com/in/chase-myers-56a394152/">
+				  <img style={{cursor: "pointer", margin: 0, marginRight: '1em', maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
+					setLinkedInImage("/social/li-hover.png")
+				  })} 
+				  onMouseOut={(_=>{
+					setLinkedInImage("/social/li.png")
+				  })} id="social-li" className="image is-24x24" src={linkedInImage} />
+				</Link>
+			</span>
+			<span>
+				<Link href="mailto:me@chasem.dev">
+				  <img style={{cursor: "pointer", margin: 0, maxWidth:'24px', display: 'inline-block'}} onMouseOver={(_=>{
+					setMailImage("/social/email-hover.png")
+				  })} 
+				  onMouseOut={(_=>{
+					setMailImage("/social/email.png")
+				  })} id="social-mail" className="image is-24x24" src={mailImage} />
+				</Link>			            
+			</span>
         </div>
 
         <div className="columns">
