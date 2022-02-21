@@ -68,9 +68,6 @@ export default function Home() {
               <a href="Chase - Resume.pdf" className="column is-4 nav" style={{minWidth: '160px'}} download>
                 <span className="icon-text content-is-vcentered" style={{justifyContent: 'center'}}>
                   Download Resume
-                  <span className="icon has-text-success">
-                    <i className="fas fa-file-export fa-sm"></i>                  
-                  </span>                  
                 </span> 
               </a>
 
@@ -82,7 +79,23 @@ export default function Home() {
 
 
         <h1 className={styles.title}> Hi! I'm Chase </h1>
-        <h2 id="experience" className={styles.sectionheader}>Work Experience</h2>
+
+        <h2 id="experience" className={styles.sectionheader}>🎓Education</h2>
+        <div style={{marginLeft: "1rem"}}>
+          <h4 style={{fontWeight: "bold", fontSize: "20px"}}>Bachelors of Science</h4>          
+
+          <div style={{marginLeft: "1rem"}} className="columns">
+            <div className="column">
+              <p><span style={{fontWeight: "bold"}}>Computer Science</span>, <span style={{fontStyle: "it"}}>Western Michigan University</span></p>
+            </div>
+            <div className="column">
+                <h5 className="job-date">December 2019</h5>
+            </div>          
+          </div>
+        </div>
+        <hr />
+        
+        <h2 id="experience" className={styles.sectionheader}>💼 Work Experience</h2>
         <div>
         <div style={{marginTop: '0px'}}></div>
           <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
@@ -99,16 +112,49 @@ export default function Home() {
               </h3>
             </div>
             <div className="column">
-              <h5 className="job-date">Dec 2018 {"->"}</h5>
+              <h5 className="job-date">Apr 2021 {"->"} Present</h5>
             </div>          
           </div>
-          <h4 className="job-title">Software Developer</h4>
+          <h4 className="job-title">Software Engineer II</h4>
+          <div className = "content job-points">
+            <ul>
+              <li>Pioneered a data validation platform for k-12 school districts to keep data clean for state reporting.</li>
+              <li>Containerized webpack bundle, backend API, and batch processing jobs using Docker, and JFrog artifactory.</li>
+              <li>Researched, configured, and deployed Keycloak authentication to Kuberenetes.</li>
+              <li>Enabled authentication and authorization with Keycloak</li>
+              <li>Allowed for Role Base Access control within the platform.</li>
+              <li>Enabled automated deployments (CI/CD) using SnakeCI</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+        <div style={{marginTop: '3em'}}></div>
+          <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
+            <div className="column is-1" style={{maxWidth: '30px', width: '30px'}}>
+              <span className="icon-text content-is-vcentered">
+                <span className="icon has-text-info">
+                  <i className="fas fa-check-circle"  ></i>
+                </span>                  
+              </span>   
+            </div>
+            <div className="column job-company">
+              <h3>            
+                Level Data Inc.
+              </h3>
+            </div>
+            <div className="column">
+              <h5 className="job-date">Dec 2018 {"->"} Apr 2021</h5>
+            </div>          
+          </div>
+          <h4 className="job-title">Integrations Engineer</h4>
           <div className = "content job-points">
             <ul>
               <li>Maintained library with thousands of scheduled jobs depending on it.</li>
               <li>Assisted data integration for school districts around the world with ‘connectors’ (E.T.L)</li>
-              <li>Designed and implemented an error monitoring web portal to save workers 100+ hours a year.</li>
-              <li>Created new integration hooks to be used to obtain data from a variety of different source locations including using Rest APIs, executable files, and web scraping.</li>
+              <li>Worked closely with school representatives and maintained project deadlines.</li>
+              <li>Designed and implemented an error monitoring web portal using SpringBoot to save workers 100+ hours.</li>
+              <li>Created new integrations to obtain data from a variety of different source locations including using Rest APIs, executable files, and web scraping.</li>
             </ul>
           </div>
         </div>
@@ -117,7 +163,7 @@ export default function Home() {
         <div style={{marginTop: '3em'}}>
           <div className="columns content-is-vcentered jobentry is-gapless" style={{marginBottom: 0}}>
             <div className="column is-1" style={{maxWidth: '30px', width: '30px'}}>
-            <span className="icon-text content-is-vcentered">
+              <span className="icon-text content-is-vcentered">
                 <span className="icon has-text-info">
                   <i className="fas fa-check-circle"  ></i>
                 </span>                  
@@ -200,7 +246,7 @@ export default function Home() {
         </div>
 
         <hr />
-        <h2 id="projects" className={styles.sectionheader}>Projects</h2>
+        <h2 id="projects" className={styles.sectionheader}>🔨 Projects</h2>
         <div className="columns is-variable is-0-tablet is-3-desktop">
 
           <div className="column is-vcentered">
@@ -220,14 +266,14 @@ export default function Home() {
                 </div>
             </div>          
             <div className="column is-vcentered">
-              <Link href="https://www.godotkart.com/">
+              <Link href="https://www.youtube.com/watch?v=5Zc2x79yEBA">
                 <a>
                   <h3>Godot Kart<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
                 </a>
               </Link>
               <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
                 <img className="hover" src="/project/godot.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                <Link href="https://www.godotkart.com/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
+                <Link href="https://www.youtube.com/watch?v=5Zc2x79yEBA" style={{verticalAlign: 'middle', display: 'inline-block'}}>
                   <p className="text">
                     Godot Kart is a Mario Kart inspired multiplayer Kart racing game built using the Godot Engine. After discovering someone made a single player demo of the game, I took lead on building the multiplayer behind the game which includes all client interpolation,
                     a master game server browser, and the game servers.
