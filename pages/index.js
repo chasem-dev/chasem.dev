@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -8,6 +8,70 @@ export default function Home() {
   const [githubImage, setGithubImage] = React.useState("/social/github.png")
   const [linkedInImage, setLinkedInImage] = React.useState("/social/li.png")
   const [mailImage, setMailImage] = React.useState("/social/email.png")
+  const SPOTIFY_TOKEN = "BQBu6T-TFTZQUSdKeR496DbllIn2w23q1hEAziJN3epocBXNk8rxKaflyWthXgZnrsf4NJjuFLdYMI7v6hcaOHMqfzsjnEx0JEfWhq-hqp9SDQXtatt18Q3o-Qzt8ZCDhYztIBCmVAiWGjfas9ggIQ"
+
+  const [spotifyData, setSpotifyData] = useState()
+  const [spotifyArtist, setSpotifyArtist] = useState("")
+  const [spotifySong, setSpotifySong] = useState("Not Currently Listening")
+
+  useEffect(()=>{
+    //-H "Content-Type: application/json" -H "Authorization: Bearer BQBu6T-TFTZQUSdKeR496DbllIn2w23q1hEAziJN3epocBXNk8rxKaflyWthXgZnrsf4NJjuFLdYMI7v6hcaOHMqfzsjnEx0JEfWhq-hqp9SDQXtatt18Q3o-Qzt8ZCDhYztIBCmVAiWGjfas9ggIQ"
+    fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SPOTIFY_TOKEN}`
+      }
+    }).then(response => response.json()).then(data=>{
+      console.log(data)
+      if(data){
+        if (data && data.is_playing === true){
+          setSpotifyData(data)
+          setSpotifySong(data.item.name)
+          console.log(data)
+          if(data.item.artists.length > 0){
+            const artist = data.item.artists[0].name
+            setSpotifyArtist(artist)
+          }        
+        }
+      }
+    })
+  }, [])
+
+  function Spotify(){
+
+    let href = spotifyData.item?.external_urls?.spotify
+
+    if(!href){
+
+    }
+
+    return (
+      <>
+      <h2 style={{fontSize: "20px"}}>Listening Now</h2>
+        <Link href={href}>
+        <div style={{textDecoration: "underline", cursor: "pointer"}}>
+          
+          <span style={{marginRight: "10px"}}><img width={"40px"} src="/social/spotify.png" /></span>
+
+          <span>
+            <span style={{fontWeight: "bold"}}>{spotifySong}</span> by <span style={{fontStyle: "italic"}}>{spotifyArtist}</span>
+          </span>
+
+          {/* {spotifyArtist && <span style={{marginLeft: "5px"}}> by <span style={{fontStyle: "italic"}}>{spotifyArtist}</span></span>} */}
+        </div>
+        </Link>
+      </>
+    )
+  }
+
+  
+  function NoSpotify(){
+    return (
+      <div>
+        <div style={{marginRight: "10px"}}><img width={"40px"} src="/social/spotify.png" /></div> Not Listening.
+      </div>
+    )
+  }
 
   return (
     <div className={styles.container}>
@@ -51,6 +115,7 @@ export default function Home() {
 				  })} id="social-mail" className="image is-24x24" src={mailImage} />
 				</Link>			            
 			</span>
+
         </div>
 
         <div className="columns">
@@ -79,6 +144,12 @@ export default function Home() {
 
 
         <h1 className={styles.title}> Hi! I'm Chase </h1>
+
+        <div style={{maxWidth: "52%", textAlign: "center", alignSelf: "center", border: "solid 1px black", borderRadius: "1rem", padding: "1rem"}}>
+          Outgoing and experienced <span style={{fontWeight: "bold"}}>Software Engineer</span> seeking a position on your team. With hard work effort, great companionship, and a strong focus on loyalty, your company would be a perfect fit.
+        </div>
+        <hr />
+
 
         <h2 id="experience" className={styles.sectionheader}>🎓Education</h2>
         <div style={{marginLeft: "1rem"}}>
@@ -319,8 +390,9 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        
+      <footer className={styles.footer} style={{textAlign: "left"}}>
+        {spotifyData && <Spotify />}
+        {!spotifyData && <NoSpotify />}
       </footer>
     </div>
   )
