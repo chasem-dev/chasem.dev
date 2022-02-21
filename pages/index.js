@@ -8,34 +8,74 @@ export default function Home() {
   const [githubImage, setGithubImage] = React.useState("/social/github.png")
   const [linkedInImage, setLinkedInImage] = React.useState("/social/li.png")
   const [mailImage, setMailImage] = React.useState("/social/email.png")
-  const SPOTIFY_TOKEN = "BQBu6T-TFTZQUSdKeR496DbllIn2w23q1hEAziJN3epocBXNk8rxKaflyWthXgZnrsf4NJjuFLdYMI7v6hcaOHMqfzsjnEx0JEfWhq-hqp9SDQXtatt18Q3o-Qzt8ZCDhYztIBCmVAiWGjfas9ggIQ"
+
+  const client_id = "4c3e9cfbc7cf49298f6bd036de876195"
+  const client_secret = "cb8c26499bef4a26baa915728085b73e"
+  const refresh_token = "AQDwIEQhn7RVlz-tGKbRoqef-vAqlYog9YPbE7qxHObvIUO1tokYvjDHkhqA0gShcnKXgQ7nTOVLHJXv9sa9fsGGFhSz27QAyPiWR07pCEBhg529PIXTSL5JRovDIFAvV1o"
 
   const [spotifyData, setSpotifyData] = useState()
   const [spotifyArtist, setSpotifyArtist] = useState("")
   const [spotifySong, setSpotifySong] = useState("Not Currently Listening")
 
   useEffect(()=>{
-    //-H "Content-Type: application/json" -H "Authorization: Bearer BQBu6T-TFTZQUSdKeR496DbllIn2w23q1hEAziJN3epocBXNk8rxKaflyWthXgZnrsf4NJjuFLdYMI7v6hcaOHMqfzsjnEx0JEfWhq-hqp9SDQXtatt18Q3o-Qzt8ZCDhYztIBCmVAiWGjfas9ggIQ"
-    fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+
+    fetchAccessToken().then((access_token)=>{
+
+      console.log("REFRESHED: ")
+      console.log(access_token)
+
+      fetch("https://api.spotify.com/v1/me/player/currently-playing", {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${SPOTIFY_TOKEN}`
+        "Authorization": `Bearer ${access_token}`
       }
-    }).then(response => response.json()).then(data=>{
-      console.log(data)
-      if(data){
-        if (data && data.is_playing === true){
-          setSpotifyData(data)
-          setSpotifySong(data.item.name)
-          console.log(data)
-          if(data.item.artists.length > 0){
-            const artist = data.item.artists[0].name
-            setSpotifyArtist(artist)
-          }        
+      }).then(response => {
+        if(response.status === 200){
+          return response.json()
+        }else{
+          return {}
         }
-      }
+      }).then(data=>{      
+        console.log(data)
+        if(data){
+          if (data && data.is_playing === true){
+            setSpotifyData(data)
+            setSpotifySong(data.item.name)
+            if(data.item.artists.length > 0){
+              const artist = data.item.artists[0].name
+              setSpotifyArtist(artist)
+            }        
+          }else{
+            if(data.error && data.error.message === "The access token expired"){
+
+            }
+          }
+        }
+      })
     })
   }, [])
+
+  function fetchAccessToken(){
+    return fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) 
+      },
+      body: new URLSearchParams({
+        'grant_type': 'refresh_token',
+        'refresh_token': refresh_token,
+        'json': true
+      })
+    }).then(response=> response.json()).then(json=>{
+      console.log(json)
+      if(json.access_token){
+        var access_token = json.access_token;
+        console.log(access_token)
+        return access_token
+      }
+    })
+  }
 
   function Spotify(){
 
