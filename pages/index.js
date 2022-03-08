@@ -78,37 +78,70 @@ export default function Home() {
   }
 
   function Spotify(){
-
-    let href = spotifyData.item?.external_urls?.spotify
-
-    if(!href){
-
-    }
-
+    const uri = spotifyData.item?.type
+    const id = spotifyData.item?.id
     return (
-      <>
-      <h2 style={{fontSize: "20px"}}>Listening Now</h2>
-        <Link href={href}>
-        <div style={{textDecoration: "underline", cursor: "pointer"}}>
-          
-          <span style={{marginRight: "10px"}}><img width={"40px"} src="/social/spotify.png" /></span>
-
-          <span>
-            <span style={{fontWeight: "bold"}}>{spotifySong}</span> by <span style={{fontStyle: "italic"}}>{spotifyArtist}</span>
-          </span>
-
-          {/* {spotifyArtist && <span style={{marginLeft: "5px"}}> by <span style={{fontStyle: "italic"}}>{spotifyArtist}</span></span>} */}
+      <div className='columns is-vcentered'>
+        <div className='column is-narrow is-vcentered m-0'>
+          <img width={"40px"} src="/social/spotify.png" />
         </div>
-        </Link>
-      </>
+        <div className='column is-narrow'>
+        <span style={{fontWeight: "bold"}}>Listening Now</span>
+        </div>
+        <iframe src={`https://open.spotify.com/embed/${uri}/${id}`} style={{border: "solid 1px black"}} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+      </div>
     )
   }
 
   
   function NoSpotify(){
     return (
+      <div className='columns is-vcentered'>
+        <div className='column is-narrow is-vcentered m-0'>
+          <img width={"40px"} src="/social/spotify.png" />
+        </div>
+        <div className='column is-narrow bold'>
+          <span style={{fontWeight: "bold"}}>Not Listening.</span>{" "} <span>Try checking between 8AM-5PM :^)</span>
+        </div>
+      </div>
+    )
+  }
+
+  function ProjectListing({title, link, imageUrl, description}){
+
+    const [active, setActive] = useState(false)
+
+    return (
       <div>
-        <div style={{marginRight: "10px"}}><img width={"40px"} src="/social/spotify.png" /></div> Not Listening.
+        <div>
+          <Link href={link}>
+            <a>
+              <h3>{title}<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
+            </a>
+          </Link>
+          <img onClick={(e)=> setActive(true)} className="hover is-clickable" src={imageUrl} border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
+        </div>
+        <div class={`modal ${active === true ? "is-active" : ""}`} >
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">{title}</p>
+              <button onClick={(e)=> setActive(false)} class="delete" aria-label="close"></button>
+            </header>
+            <section>
+              <img className="hover" src={imageUrl} style={{width: "100%`", minHeight: "350px"}} />
+            </section>
+            <section class="modal-card-body">
+              <p className="text">
+                {description}
+              </p>
+            </section>
+            <footer class="modal-card-foot" style={{width: "100%"}}>
+              <Link href={link}><button class="button is-primary is-pulled-left" style={{float: "left"}}>View Site</button></Link>
+            </footer>
+          </div>
+        </div>
       </div>
     )
   }
@@ -185,7 +218,7 @@ export default function Home() {
 
         <h1 className={styles.title}> Hi! I'm Chase </h1>
 
-        <div style={{maxWidth: "52%", textAlign: "center", alignSelf: "center", border: "solid 1px black", borderRadius: "1rem", padding: "1rem"}}>
+        <div style={{minWidth: "320px", maxWidth: "52%", textAlign: "center", alignSelf: "center", border: "solid 1px black", borderRadius: "1rem", padding: "1rem"}}>
           Outgoing and experienced <span style={{fontWeight: "bold"}}>Software Engineer</span> seeking a position on your team. With hard work effort, great companionship, and a strong focus on loyalty, your company would be a perfect fit.
         </div>
         <hr />
@@ -359,74 +392,41 @@ export default function Home() {
         <hr />
         <h2 id="projects" className={styles.sectionheader}>🔨 Projects</h2>
         <div className="columns is-variable is-0-tablet is-3-desktop">
-
-          <div className="column is-vcentered">
-                <Link href="https://inventories.chasem.dev/">
-                  <a>
-                    <h3>Inventories.gg<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
-                  </a>
-                </Link>
-                <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                  <img className="hover" src="/project/inventories.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                  <Link href="https://inventories.chasem.dev/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                    <p className="text">
-                      Inventories.gg has been the most complete and feature full project I've worked on since gaining as much experience in React. It is a Minecraft inventory viewer for any server who wants to display their players inventories for others to see.
-                      Technlogies include Material-UI, MongoDB, React and NextJS. Authentication is using OAuth handled by Clerk.dev
-                    </p>
-                  </Link>
-                </div>
+            <div className="column is-vcentered">
+              <ProjectListing title="Inventories.gg"
+                              link="https://inventories.chasem.dev/"
+                              imageUrl="/project/inventories.png"
+                              description="Inventories.gg has been the most complete and feature full project I've worked on since gaining as much experience in React. It is a Minecraft inventory viewer for any server who wants to display their players inventories for others to see.
+                                    Technlogies include Material-UI, MongoDB, React and NextJS. Authentication is using OAuth handled by Clerk.dev"
+              />
             </div>          
             <div className="column is-vcentered">
-              <Link href="https://www.youtube.com/watch?v=5Zc2x79yEBA">
-                <a>
-                  <h3>Godot Kart<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
-                </a>
-              </Link>
-              <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                <img className="hover" src="/project/godot.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                <Link href="https://www.youtube.com/watch?v=5Zc2x79yEBA" style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                  <p className="text">
-                    Godot Kart is a Mario Kart inspired multiplayer Kart racing game built using the Godot Engine. After discovering someone made a single player demo of the game, I took lead on building the multiplayer behind the game which includes all client interpolation,
-                    a master game server browser, and the game servers.
-                  </p>
-                </Link>
-              </div>
+              <ProjectListing title="Godot Kart"
+                              link="https://www.youtube.com/watch?v=5Zc2x79yEBA"
+                              imageUrl="/project/godot.png"
+                              description="Godot Kart is a Mario Kart inspired multiplayer Kart racing game built using the Godot Engine. After discovering someone made a single player demo of the game, I took lead on building the multiplayer behind the game which includes all client interpolation,
+                      a master game server browser, and the game servers."
+              />
             </div>
         </div>
         <div className="columns is-variable is-0-tablet is-3-desktop">
           <div className="column is-vcentered">
-              <Link href="https://hashmap.me/">
-                <a>
-                  <h3>Hashmap.me<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
-                </a>
-              </Link>
-              <div className="wrapper content-is-vcentered"  style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                <img className="hover" src="/project/hashmap.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                <Link href="https://hashmap.me/" style={{verticalAlign: 'middle', display: 'inline-block'}}>
-                  <p className="text">
-                    Hashmap.me was my implementation of simplifying the ability to persist data between restarts for an application. Anytime a developer wants to begin a project they will begin by storing data into their applications memory. 
-                    This aims to allow developers to simply upload thier cache through HTTP and then on startup pull that cache back down.
-                  </p>
-                </Link>
-              </div>
+            <ProjectListing title="Hashmap.me"
+                              link="https://hashmap.me/"
+                              imageUrl="/project/hashmap.png"
+                              description="Hashmap.me was my implementation of simplifying the ability to persist data between restarts for an application. Anytime a developer wants to begin a project they will begin by storing data into their applications memory. 
+                    This aims to allow developers to simply upload thier cache through HTTP and then on startup pull that cache back down."
+            />
           </div>
           <div className="column">
-              <Link href="https://chasebin.vercel.app/">
-                <a>
-                  <h3>Chasebin<span style={{marginLeft: '.25em'}} className="icon"><i className="fas fa-xs fa-external-link-alt"></i></span></h3>              
-                </a>
-              </Link>
-              <div className="wrapper">
-                <img className="hover" src="/project/chasebin.png" border="5px" style={{borderColor: "#cf934e", width: "550px", height: "350px"} } />
-                <Link href="https://chasebin.vercel.app/">
-                  <p className="text">
-                    Chasebin is a simple project to help boost my familiarity with NextJS and React. It is a code formatter that can generate links that are parseable client side only. 
+              <ProjectListing title="Chasebin"
+                                link="https://chasebin.vercel.app/"
+                                imageUrl="/project/chasebin.png"
+                                description="Chasebin is a simple project to help boost my familiarity with NextJS and React. It is a code formatter that can generate links that are parseable client side only. 
                     The code snippet gets converted to Bytes using LZMA and then converts each byte to BASE64 and
-                    appends this to the URL, along with the selected language formatting selected.
-                  </p>
-                </Link>
-              </div>
-            </div>
+                    appends this to the URL, along with the selected language formatting selected."
+              />          
+          </div>
         </div>
       </main>
 
