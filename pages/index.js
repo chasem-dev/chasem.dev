@@ -219,7 +219,7 @@ export default function Home() {
         <h1 className={styles.title}> Hi! I'm Chase </h1>
 
         <div style={{minWidth: "320px", maxWidth: "52%", textAlign: "center", alignSelf: "center", border: "solid 1px black", borderRadius: "1rem", padding: "1rem"}}>
-          Outgoing and experienced <span style={{fontWeight: "bold"}}>Software Engineer</span> seeking a position on your team. With hard work effort, great companionship, and a strong focus on loyalty, your company would be a perfect fit.
+          Outgoing and experienced <span style={{fontWeight: "bold"}}>Software Engineer</span>. With hard work effort, great companionship, and a strong focus on loyalty, all tasks and roles are a perfect fit.
         </div>
         <hr />
 
