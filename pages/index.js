@@ -471,6 +471,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       </Head>
+      <a rel="me" href="https://mastodon.chasem.dev/@admin" hidden="true">Mastodon</a>
       <MainContent />
       <footer className={styles.footer} style={{textAlign: "left"}}>
         {spotifyData && <Spotify />}
