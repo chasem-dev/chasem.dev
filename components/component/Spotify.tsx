@@ -64,6 +64,7 @@ export default function Spotify() {
           "Basic " +
           new Buffer(client_id + ":" + client_secret).toString("base64"),
       },
+      // @ts-ignore
       body: new URLSearchParams({
         grant_type: "refresh_token",
         refresh_token: refresh_token,
