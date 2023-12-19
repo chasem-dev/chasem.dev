@@ -416,7 +416,7 @@ export function MainPage() {
   );
 }
 
-function FacebookIcon(props) {
+function FacebookIcon(props: any) {
   return (
     <svg
       {...props}
@@ -435,7 +435,7 @@ function FacebookIcon(props) {
   );
 }
 
-function GithubIcon(props) {
+function GithubIcon(props: any) {
   return (
     <svg
       {...props}
