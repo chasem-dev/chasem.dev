@@ -9,7 +9,10 @@ export const metadata: Metadata = {
   description: 'A professional software engineer, and a gatherer of many hobbies.',
   creator: 'Chase Myers',
   icons: {
-    icon: '/me.jpg'
+    icon: 'https://chasem.dev/preview.png'
+  },
+  openGraph: {
+    images: 'https://chasem.dev/preview.png'
   }
 }
 
@@ -20,10 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <title>Chase Myers</title>
         <link rel="icon" href="/favicon.ico" />
-      </head>
+      </head> */}
       <body className={inter.className}>{children}</body>
     </html>
   )
