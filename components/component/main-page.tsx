@@ -455,7 +455,7 @@ function GithubIcon(props) {
   );
 }
 
-function LinkedinIcon(props) {
+function LinkedinIcon(props: any) {
   return (
     <svg
       {...props}
@@ -476,7 +476,7 @@ function LinkedinIcon(props) {
   );
 }
 
-function MailIcon(props) {
+function MailIcon(props: any) {
   return (
     <svg
       {...props}
@@ -496,7 +496,7 @@ function MailIcon(props) {
   );
 }
 
-function GraduationCapIcon(props) {
+function GraduationCapIcon(props: any) {
   return (
     <svg
       {...props}
@@ -516,7 +516,7 @@ function GraduationCapIcon(props) {
   );
 }
 
-function BriefcaseIcon(props) {
+function BriefcaseIcon(props: any) {
   return (
     <svg
       {...props}
