@@ -16,7 +16,7 @@ import Spotify from "./Spotify";
 
 export function MainPage() {
   return (
-    <div key="1" className="bg-white text-gray-800 rounded lg:w-3/4">
+    <div key="1" className="bg-white text-gray-800 rounded lg:w-4/5">
       <header className="flex justify-between items-center py-6 px-10 border-b">
         <div className="space-x-4 hidden sm:hidden md:flex lg:flex">
           <Link href={"https://github.com/Xwaffle1/"}>
@@ -255,9 +255,9 @@ export function MainPage() {
         </section>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Projects</h2>
         <section className="mt-10 flex flex-row justify-center w-full" id="projects">
-          <div className="w-full sm:w-full md:w-full lg:w-3/4">
+          <div className="w-full">
             <div className="grid justify-center sm:grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4">
-            <Card>
+            <Card className="min">
                 <CardHeader>
                   <CardTitle className="p-0">Tunnels.gg</CardTitle>
                 </CardHeader>
@@ -292,12 +292,13 @@ export function MainPage() {
                 <CardContent>
                   <img
                     alt="Project 1"
-                    className="w-full h-64 sm:h-64 md:h-96 lg:h-96 object-cover rounded"
+                    className="w-full h-64 sm:h-64 md:h-96 lg:h-96 border-2 border-gray-200 rounded"
                     height="200"
                     src="/inventories.png"
                     style={{
                       aspectRatio: "200/200",
-                      objectFit: "cover",
+                      objectPosition: 'top',
+                      objectFit: 'scale-down'
                     }}
                     width="200"
                   />
@@ -351,12 +352,12 @@ export function MainPage() {
                 <CardContent>
                   <img
                     alt="Project 3"
-                    className="w-full h-64 sm:h-64 md:h-96 lg:h-96 object-cover rounded"
+                    className="w-full h-64 sm:h-64 md:h-96 lg:h-96 rounded border-2 border-gray-200"
                     height="200"
                     src="/hashmap.png"
                     style={{
                       aspectRatio: "200/200",
-                      objectFit: "cover",
+                      objectFit: 'cover',
                     }}
                     width="200"
                   />
@@ -379,12 +380,12 @@ export function MainPage() {
                 <CardContent>
                   <img
                     alt="International Dog House"
-                    className="w-full h-64 sm:h-64 md:h-96 lg:h-96 object-cover rounded"
+                    className="w-full h-64 sm:h-64 md:h-96 lg:h-96 border-2 border-gray-200 rounded"
                     height="200"
                     src="/doghouse.png"
                     style={{
                       aspectRatio: "200/200",
-                      objectFit: "cover",
+                      objectFit: "scale-down",
                     }}
                     width="200"
                   />
