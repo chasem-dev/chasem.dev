@@ -258,6 +258,34 @@ export function MainPage() {
           <div className="w-full">
             <div className="grid justify-center sm:grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4">
             <Card className="min">
+              <CardHeader>
+                <CardTitle className="p-0">BuddyAI</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <img
+                  alt="BuddyAI"
+                  className="w-full h-64 sm:h-64 md:h-96 lg:h-96 object-cover rounded"
+                  height="200"
+                  src="/buddyai.png"
+                  style={{
+                    aspectRatio: "200/200",
+                    objectFit: 'scale-down'
+                  }}
+                  width="200"
+                />
+                <div className="mt-2 flex w-full">
+                  <p className="text-gray-400 w-full">
+                  A personal AI companion designed to provide comfort over the phone through human-like conversations whenever you need it.
+                  </p>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Link className="text-yellow-600 hover:underline hover:bg-gray-200 rounded p-1" href="https://buddyai.org?ref=chasem.dev">
+                  Visit Site
+                </Link>
+              </CardFooter>
+            </Card>
+            <Card className="min">
                 <CardHeader>
                   <CardTitle className="p-0">Tunnels.gg</CardTitle>
                 </CardHeader>
