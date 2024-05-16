@@ -19,7 +19,7 @@ export function MainPage() {
     <div key="1" className="bg-white text-gray-800 rounded lg:w-4/5">
       <header className="flex justify-between items-center py-6 px-10 border-b">
         <div className="space-x-4 hidden sm:hidden md:flex lg:flex">
-          <Link href={"https://github.com/Xwaffle1/"}>
+          <Link href={"https://github.com/chasem-dev/"}>
             <div className="text-yellow-600 hover:bg-gray-200 rounded cursor-pointer p-1">
                 <GithubIcon className="text-yellow-600" />
             </div>
