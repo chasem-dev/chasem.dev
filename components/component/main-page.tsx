@@ -56,9 +56,8 @@ export function MainPage() {
           <h1 className="text-4xl font-bold mt-4">Hi! I{"'"}m Chase</h1>
           <div className="flex justify-center">
             <p className="text-gray-600 mt-2 text-left w-3/4">
-              An outgoing and experienced Software Engineer who thrives in
-              ambiguity, with hard work effort, great companionship, and is
-              eager to hear about your opportunities.
+              An outgoing and experienced Software Engineer, founder of Teatime, thrives in
+              ambiguity, hard work effort, and offers great companionship.
             </p>
           </div>
         </section>
@@ -257,6 +256,34 @@ export function MainPage() {
         <section className="mt-10 flex flex-row justify-center w-full" id="projects">
           <div className="w-full">
             <div className="grid justify-center sm:grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4">
+            <Card className="min">
+              <CardHeader>
+                <CardTitle className="p-0">Teatime</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <img
+                  alt="Teatime"
+                  className="w-full h-64 sm:h-64 md:h-96 lg:h-96 object-cover rounded"
+                  height="200"
+                  src="/teatime-splash.png"
+                  style={{
+                    aspectRatio: "200/200",
+                    objectFit: 'cover'
+                  }}
+                  width="200"
+                />
+                <div className="mt-2 flex w-full">
+                  <p className="text-gray-400 w-full">
+                  Struggling to hit {"'"}send{"'"}? Get a second opinion on your texts with Teatime. Dive into real-time text drama, follow anonymous conversations, and contribute your insights. Whether you need a confidence boost or a wordsmith.
+                  </p>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Link className="text-yellow-600 hover:underline hover:bg-gray-200 rounded p-1" href="https://itsteatime.app?ref=chasem.dev">
+                  Visit Site
+                </Link>
+              </CardFooter>
+            </Card>
             <Card className="min">
               <CardHeader>
                 <CardTitle className="p-0">BuddyAI</CardTitle>
