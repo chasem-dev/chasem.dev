@@ -43,7 +43,7 @@ export function MainPage() {
             <Link href="#projects">Projects</Link>
           </div>
           <div className="text-white bg-yellow-600 hover:bg-yellow-200 hover:text-gray-800 rounded cursor-pointer p-1 px-2">
-            <Link href="/Chase-Myers-Resume-11-27.pdf">View Resume</Link>
+            <Link href="/Chase-Myers-Resume-03-22-25.pdf">View Resume</Link>
           </div>
         </nav>
       </header>
@@ -53,7 +53,7 @@ export function MainPage() {
             className="relative flex shrink-0 overflow-hidden w-64 h-64 rounded-full mx-auto border-yellow-600 border-4"
             src="me.jpg"
           ></img>
-          <h1 className="text-4xl font-bold mt-4">Hi! I{"'"}m Chase</h1>
+          <h1 className="text-4xl font-bold mt-4">Hi! I&apos;m Chase</h1>
           <div className="flex justify-center">
             <p className="text-gray-600 mt-2 text-left w-3/4">
               An outgoing and experienced Software Engineer, founder of Teatime, thrives in
@@ -63,7 +63,7 @@ export function MainPage() {
         </section>
         <div className="flex sm:flex md:hidden lg:hidden justify-center my-8">
           <div className="text-center text-white bg-yellow-600 hover:bg-yellow-200 hover:text-gray-800 rounded cursor-pointer p-2 w-1/2">
-              <Link href="/Chase-Myers-Resume-11-27.pdf">View Resume</Link>
+              <Link href="/Chase-Myers-Resume-03-22-25.pdf">View Resume</Link>
           </div>
         </div>
         <section className="mt-10">
@@ -84,40 +84,50 @@ export function MainPage() {
           <div className="bg-blue-100 p-6 rounded-lg mb-6">
             <BriefcaseIcon className="text-yellow-600" />
             <h3 className="text-lg font-semibold mt-2">
-              Software Engineer - Indeed Recruiter Extension
+              Software Engineer II - ATS Internal Platforms
             </h3>
             <p className="text-gray-600">Indeed.com</p>
-            <p className="text-gray-600">Aug 2022 - Present</p>
+            <p className="text-gray-600">Dec 2023 - Present</p>
             <ul className="list-disc pl-6 mt-2 text-gray-600">
               <li>
-                Directed a squad of three engineers in collaboration with a
-                Product Manager and UX Designer to develop designated features
-                each quarter.
+                Coordinated and conducted problem space reviews with three different cross org teams to get alignment on software design requirements prior to designing the implementation
               </li>
               <li>
-                Successfully deprecated third party authentication and
-                transitioned to Indeed{"'"}s first-party cookie authentication
-                in React.
+                Created a technical design doc, and problem space review document for our internal team to go over, allowing iterative improvements prior to the full scale cross org design review
               </li>
               <li>
-                Delivered complex solutions requiring modifications across
-                multiple code repositories, including React, AngularJS, Rails,
-                and Java SpringBoot, demonstrating versatility in software
-                development.
+                Collaborated on designing a large cross org initiative, requiring continuous alignment on timelines spanning multiple teams for massive scaled software design
               </li>
               <li>
-                Coordinated the design and release of features spanning multiple
-                cross functional teams
+                Initiated and led design reviews for load testing a high-throughput SQS-to-MongoDB service supporting over 3 million daily requests, ensuring scalability and reliability
               </li>
               <li>
-                Integrated existing Indeed features such as Hiring Insights,
-                Analytics, and Resume Outreach, expanding the extension{"'"}s
-                functionality and user engagement.
+                Organized design implementations into Jira Epics, and broke down the work into small achievable tasks and then delegated to a SWE 1, continuously checking in and helping to avoid road blocks
+              </li>
+            </ul>
+            <h3 className="text-lg font-semibold mt-2">
+              Software Engineer - Indeed Chrome Extension
+            </h3>
+            <p className="text-gray-600">Indeed.com</p>
+            <p className="text-gray-600">Aug 2022 - Dec 2023</p>
+            <ul className="list-disc pl-6 mt-2 text-gray-600">
+              <li>
+                Directed a squad of three engineers in collaboration with a Product Manager and UX Designer to develop designated features to continually release quarterly goals rapidly to production
               </li>
               <li>
-                Facilitated the refinement of ambiguous feature proposals and
-                implement technical adaptations meeting requirements provided by
-                Product
+                Replaced legacy third party authentication with Indeed first-party cookie authentication solution, leading to increased reusability, lower defects and a better user experience
+              </li>
+              <li>
+                Delivered complex solutions requiring modifications across multiple code repositories, including React, AngularJS, Rails, and Java SpringBoot, demonstrating versatility in software development
+              </li>
+              <li>
+                Coordinated the design and release of features spanning multiple cross functional teams
+              </li>
+              <li>
+                Integrated existing Indeed features such as Hiring Insights, Analytics, and Resume Outreach, expanding the extension&apos;s functionality and user engagement, leading to a 500% increase in usage over a 3 month span
+              </li>
+              <li>
+                Facilitated the refinement of ambiguous feature proposals and implement technical adaptations meeting requirements provided by Product
               </li>
             </ul>
           </div>
@@ -464,7 +474,7 @@ export function MainPage() {
         </div>
         <div className="flex-col hidden sm:hidden md:flex lg:flex justify-center">
           <div className="text-white bg-yellow-600 hover:bg-yellow-200 hover:text-gray-800 rounded cursor-pointer p-1 px-2 flex-nowrap text-nowrap">
-              <Link href="/Chase-Myers-Resume-11-27.pdf">View Resume</Link>
+              <Link href="/Chase-Myers-Resume-03-22-25.pdf">View Resume</Link>
           </div>
         </div>
       </footer>
