@@ -43,7 +43,7 @@ export function MainPage() {
             <Link href="#projects">Projects</Link>
           </div>
           <div className="text-white bg-yellow-600 hover:bg-yellow-200 hover:text-gray-800 rounded cursor-pointer p-1 px-2">
-            <Link href="/Chase-Myers-Resume-03-22-25.pdf">View Resume</Link>
+            <Link href="/Chase-Myers-Resume-06-26-25.pdf">View Resume</Link>
           </div>
         </nav>
       </header>
@@ -63,7 +63,7 @@ export function MainPage() {
         </section>
         <div className="flex sm:flex md:hidden lg:hidden justify-center my-8">
           <div className="text-center text-white bg-yellow-600 hover:bg-yellow-200 hover:text-gray-800 rounded cursor-pointer p-2 w-1/2">
-              <Link href="/Chase-Myers-Resume-03-22-25.pdf">View Resume</Link>
+              <Link href="/Chase-Myers-Resume-06-26-25.pdf">View Resume</Link>
           </div>
         </div>
         <section className="mt-10">
@@ -474,7 +474,7 @@ export function MainPage() {
         </div>
         <div className="flex-col hidden sm:hidden md:flex lg:flex justify-center">
           <div className="text-white bg-yellow-600 hover:bg-yellow-200 hover:text-gray-800 rounded cursor-pointer p-1 px-2 flex-nowrap text-nowrap">
-              <Link href="/Chase-Myers-Resume-03-22-25.pdf">View Resume</Link>
+              <Link href="/Chase-Myers-Resume-06-26-25.pdf">View Resume</Link>
           </div>
         </div>
       </footer>
